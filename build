@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
 docker run --rm \
-           -v $(pwd):/usr/src/file-corpses-finder \
-           -w /usr/src/file-corpses-finder \
-           golang:1.4 go build -v -o bin/file-corpses-finder
+           -v $(pwd):/go \
+           golang:1.4 go build -v -o bin/file-corpses-finder file-corpses-finder
