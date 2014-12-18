@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
   end
 
   (1..$num_instances).each do |i|
-    config.vm.define vm_name = "vm-%02d" % i do |config|
+    config.vm.define vm_name = "gogo-%02d" % i do |config|
       config.vm.hostname = vm_name
 
       if $enable_serial_logging
@@ -82,7 +82,7 @@ Vagrant.configure("2") do |config|
         vb.cpus = $vb_cpus
       end
 
-      ip = "192.168.104.#{i+100}"
+      ip = "192.168.106.#{i+100}"
       config.vm.network :private_network, ip: ip
 
       # Uncomment below to enable NFS for sharing the host machine into the coreos-vagrant VM.
